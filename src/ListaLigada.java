@@ -13,11 +13,10 @@ public class ListaLigada {
 
     public static class lista {
         private no head = null;
-        private no follower = null;
-        private final no tail = head;
+        private no follower;
 
         public lista(){
-            no init = new no(0, this.tail, this.head);
+            no init = new no(0, null, this.head);
             this.head = init;
             this.follower = init;
         }
@@ -63,7 +62,7 @@ public class ListaLigada {
                     assert anterior != null;
                     anterior.proximo = atual.proximo;
                     atual.proximo.anterior = anterior;
-                };
+                }
 
                 anterior = atual;
 
@@ -73,7 +72,7 @@ public class ListaLigada {
         }
 
         public void loopList(){
-            no atual = this.head.proximo;;
+            no atual = this.head.proximo;
 
 
             while(true){
